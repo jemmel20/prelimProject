@@ -6,7 +6,7 @@
     <div class="row">
     <div class="col-md-4">
         <h3>Sign up</h3>
-        <form action="#" method="post">
+        <form action="<?php echo e(route('signup')); ?>" method="post">
             <div class="form-group">
                 <label for="email">Your E-mail</label>
                 <input class="form-control" type="text" name="first" id="first">
@@ -20,6 +20,7 @@
                 <input class="form-control" type="password" name="password" id="password">
             </div>
             <button type="submit" class="btn-primary">Submit</button>
+            <input type="hidden" name="_token" value="<?php echo e(Session::token()); ?>">
         </form>
     </div>
     <div class="col-md-4">
